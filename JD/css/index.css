@@ -61,12 +61,12 @@
 .arrow-r {
     right: 0;
 }
-.circle {
+.grid-col2-t .circle {
     width: 167px;
     height: 20px;
     background: rgba(255,255,255,0.3);
     position: absolute;
-    left: 50%;
+    left: 40%;
     bottom: 20px;
     transfrom: translateX(-50%);
     border-radius: 10px;
