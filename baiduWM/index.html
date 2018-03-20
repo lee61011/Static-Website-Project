@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>百度外卖</title>
+    <!-- 导入 swiper 的css样式-->
+    <link rel="stylesheet" href="lib/swiper/css/swiper.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <!--切换的页面 swiper 实现-->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">1</div>
+            <div class="swiper-slide">2</div>
+            <div class="swiper-slide">3</div>
+            <div class="swiper-slide">4</div>
+            <div class="swiper-slide">5</div>
+            <div class="swiper-slide">6</div>
+            <div class="swiper-slide">7</div>
+        </div>
+    </div>
+    <!--loading页面-->
+    <div class="loading">
+        <div class="rider"></div>
+        <div class="progress"></div>
+        <div class="info"></div>
+        <!--外卖logo-->
+        <div class="logo"></div>
+        <!--版权信息-->
+        <div class="copyright">
+            @ 2018 BaiDu Waimai Produced
+        </div>
+    </div>
+    <!--欢迎页面-->
+    <div class="welcome">
+        <div class="info">
+            <div class="hello"></div>
+        </div>
+        <!--云-->
+        <div class="cloud"></div>
+        <!--草地-->
+        <div class="grass1"></div>
+        <!--熊-->
+        <div class="bear-box">
+            <div class="bear"></div>
+            <div class="smoke"></div>
+        </div>
+        <!--树-->
+        <div class="trees"></div>
+        <!--草2-->
+        <div class="grass2"></div>
+        <!--按钮-->
+        <div class="rotate-btn-box">
+            <div class="btn"></div>
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="lib/swiper/js/swiper.min.js"></script>
+<!--导入 zepto -->
+<script type="text/javascript" src="lib/zepto/zepto.js"></script>
+<script type="text/javascript" src="lib/zepto/event.js"></script>
+<script type="text/javascript" src="lib/zepto/fx.js"></script>
+<script type="text/javascript" src="lib/zepto/touch.js"></script>
+<!--提供fadeout方法-->
+<script type="text/javascript" src="lib/zepto/fx_methods.js"></script>
+<script>
+    var swiper = new Swiper(".swiper-container",{
+        direction: "vertical",          // 改变默认排列方向
+    });
+
+    // 点击消失
+    $(".loading").click(function(){
+        $(this).fadeOut();
+    });
+    $(".welcome").click(function(){
+        $(this).fadeOut();
+    });
+</script>
+</html>
