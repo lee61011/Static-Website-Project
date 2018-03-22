@@ -1459,9 +1459,7 @@ body {
     transform: translateX(-260/32rem);
   }*/
 }
-/*
-    ... ... 为了可以走进度 进度条中 添加子元素 .step
-*/
+/*... ... 为了可以走进度 进度条中 添加子元素 .step*/
 .loading .progress {
   background-color: transparent;
 }
@@ -1477,4 +1475,325 @@ body {
 }
 .loading.animate .rider {
   animation: bearRide 2s linear forwards;
+}
+@keyframes grass1 {
+  to {
+    height: 12.375rem;
+  }
+}
+@keyframes grass2 {
+  from {
+    transform: scale(2, 1);
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes trees {
+  from {
+    transform: translateY(-200%);
+  }
+  80% {
+    transform: translateY(10%);
+    opacity: 1;
+  }
+  90% {
+    transform: translateY(-10%);
+    opacity: 1;
+  }
+  100% {
+    transform: none;
+    opacity: 1;
+  }
+}
+@keyframes btnAppear {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes bearDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+@keyframes upandDown {
+  from {
+    transform: translateY(-5%);
+  }
+  to {
+    transform: none;
+  }
+}
+@keyframes small2big {
+  from {
+    transform: scale(0, 0);
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+@keyframes bearDisappear {
+  from {
+    opacity: 1;
+  }
+  to {
+    transform: translateY(100%) scale(1.5, 1.5);
+    opacity: 0;
+  }
+}
+.welcome .grass1 {
+  height: 0.625rem;
+}
+.welcome .grass2 {
+  opacity: 0;
+}
+.welcome .trees {
+  opacity: 0;
+}
+.welcome .rotate-btn-box {
+  opacity: 0;
+  transform: scale(0, 0);
+}
+.welcome .bear-box {
+  opacity: 0;
+}
+.welcome .smoke {
+  opacity: 0;
+}
+.welcome .info {
+  opacity: 0;
+}
+.welcome .hello {
+  opacity: 0;
+}
+.welcome.animate .grass1 {
+  animation: grass1 0.8s forwards;
+}
+.welcome.animate .grass2 {
+  animation: grass2 .5s .8s forwards;
+}
+.welcome.animate .trees {
+  animation: trees .5s 1s forwards;
+}
+.welcome.animate .rotate-btn-box {
+  animation: btnAppear .5s 1.5s forwards;
+}
+.welcome.animate .circle2 {
+  animation: rotate 1s linear infinite;
+}
+.welcome.animate .bear-box {
+  animation: bearDown .5s 2s forwards;
+}
+.welcome.animate .bear {
+  animation: upandDown .5s 2.5s infinite;
+}
+.welcome.animate .smoke {
+  animation: small2big .5s 2.5s infinite;
+}
+.welcome.animate .info {
+  animation: bearDown .5s 3s forwards;
+}
+.welcome.animate .hello {
+  animation: small2big .5s 3.5s  forwards;
+}
+@keyframes right2left {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+@keyframes heightBigger {
+  to {
+    height: 100%;
+  }
+}
+.title h3 {
+  opacity: 0;
+}
+.title p {
+  opacity: 0;
+}
+.title .line {
+  height: 0% !important;
+}
+.swiper-slide.animate h3 {
+  animation: right2left .5s forwards;
+}
+.swiper-slide.animate p {
+  animation: right2left .5s .2s forwards;
+}
+.swiper-slide.animate .line {
+  animation: heightBigger .5s .5s forwards;
+}
+@keyframes rotateInOut {
+  0% {
+    transform: rotateZ(90deg);
+  }
+  25% {
+    transform: rotateZ(-5deg);
+    opacity: 1;
+  }
+  30% {
+    transform: rotateZ(0);
+    opacity: 1;
+  }
+  65% {
+    transform: rotateZ(0);
+    opacity: 1;
+  }
+  70% {
+    transform: rotateZ(5deg);
+    opacity: 1;
+  }
+  100% {
+    transform: rotateZ(-90deg);
+    opacity: 1;
+  }
+}
+@keyframes rotateInNotOut {
+  0% {
+    transform: rotateZ(90deg);
+  }
+  95% {
+    transform: rotateZ(-5deg);
+    opacity: 1;
+  }
+  100% {
+    transform: rotateZ(0deg);
+    opacity: 1;
+  }
+}
+@keyframes runUpDownLeftRight {
+  25% {
+    transform: translateX(10%) translateY(0);
+  }
+  50% {
+    transform: translateX(-10%) translateY(10%);
+  }
+  75% {
+    transform: translateX(0%) translateY(-10%);
+  }
+  100% {
+    transform: translateX(0%) translateY(0);
+  }
+}
+@keyframes left2Right2left {
+  30% {
+    transform: translateX(-100%);
+  }
+  60% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: none;
+  }
+}
+@keyframes zhayan {
+  30% {
+    transform: scale(1, 0);
+  }
+  70% {
+    transform: scale(1, 0);
+  }
+  100% {
+    transform: scale(1, 0);
+  }
+}
+.page1 .scroll-page1 .bg {
+  opacity: 0;
+  transform-origin: 50% 200%;
+}
+.page1 .scroll-page1 .person {
+  opacity: 0;
+  transform-origin: 50% 200%;
+}
+.page1 .scroll-page1 .message-container {
+  opacity: 0;
+  transform-origin: right bottom;
+}
+.page1 .scroll-page2 .bg {
+  opacity: 0;
+  transform-origin: 50% 200%;
+}
+.page1 .scroll-page2 .person {
+  opacity: 0;
+  transform-origin: 50% 200%;
+}
+.page1 .scroll-page2 .message-container {
+  opacity: 0;
+  transform-origin: right bottom;
+}
+.page1 .scroll-page3 .bg {
+  opacity: 0;
+  transform-origin: 50% 200%;
+}
+.page1 .scroll-page3 .person {
+  opacity: 0;
+  transform-origin: 50% 200%;
+}
+.page1 .scroll-page3 .message-container {
+  opacity: 0;
+  transform-origin: right bottom;
+}
+.page1.animate .scroll-page1 .bg {
+  animation: rotateInOut 1.5s forwards;
+}
+.page1.animate .scroll-page1 .person {
+  animation: rotateInOut 1.5s .2s forwards;
+}
+.page1.animate .scroll-page1 .person .paper1 {
+  animation: left2Right2left 1s infinite;
+}
+.page1.animate .scroll-page1 .person .paper2 {
+  animation: left2Right2left .5s infinite;
+}
+.page1.animate .scroll-page1 .message-container {
+  animation: rotateInOut 1.5s .5s forwards;
+}
+.page1.animate .scroll-page2 .bg {
+  animation: rotateInOut 1.5s 1.7s forwards;
+}
+.page1.animate .scroll-page2 .person {
+  animation: rotateInOut 1.5s 1.9s forwards;
+}
+.page1.animate .scroll-page2 .person .eye {
+  animation: zhayan .3s infinite;
+}
+.page1.animate .scroll-page2 .message-container {
+  animation: rotateInOut 1.5s 2.2s forwards;
+}
+.page1.animate .scroll-page3 .bg {
+  animation: rotateInNotOut .5s 3.4s forwards;
+}
+.page1.animate .scroll-page3 .person {
+  animation: rotateInNotOut .5s 3.6s forwards;
+}
+.page1.animate .scroll-page3 .message-container {
+  animation: rotateInNotOut 1.5s 3.9s forwards;
+}
+.page1.animate .scroll-page3 .word1 {
+  animation: runUpDownLeftRight 1s infinite;
+}
+.page1.animate .scroll-page3 .word2 {
+  animation: runUpDownLeftRight .5s infinite;
+}
+.page1.animate .scroll-page3 .word3 {
+  animation: runUpDownLeftRight .8s infinite;
+}
+.page1.animate .scroll-page3 .word4 {
+  animation: runUpDownLeftRight 1.2s infinite;
 }

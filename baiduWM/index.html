@@ -60,7 +60,7 @@
                     <div class="line"></div>
                 </div>
                 <!--轮播的盒子1-->
-                <div class="scroll-page1" style="display: none;">
+                <div class="scroll-page1">
                     <div class="bg"></div>
                     <div class="person">
                         <div class="files">
@@ -76,7 +76,7 @@
                     </div>
                 </div>
                 <!--轮播的盒子2-->
-                <div class="scroll-page2" style="display: none;">
+                <div class="scroll-page2">
                     <div class="bg"></div>
                     <div class="person">
                         <div class="eye"></div>
@@ -228,6 +228,11 @@
     //  设置 swiper
     var swiper = new Swiper(".swiper-container",{
         direction: "vertical",          // 改变默认排列方向
+        //  添加回调函数
+        onSlideChangeEnd: function(swiper){
+            //  alert(swiper.activeIndex)   切换结束时,告诉我现在是第几个slide
+            $(".swiper-slide").eq(swiper.activeIndex).addClass("animate").siblings().removeClass("animate");
+        }
     });
 
     /*// 点击消失
@@ -240,15 +245,33 @@
 
     // 1.页面打开  稍等一会  开启定时器]
     $(function(){
+        // 第一页js 效果
         setTimeout(function(){
             $(".loading").addClass("animate");
+
             /*document.querySelector(".loading .step").addEventListener("animationend",function(){
                 console.log("动画播放完成!");
             });*/
+
             $(".loading .step").on("animationend",function(){
-                $(".loading").fadeOut(1000);
+                $(".loading").fadeOut(1000,function(){
+                    // 淡出之后 为 welcome 添加 animate
+                    $(".welcome").addClass("animate");
+                });
             });
         },1000);
+
+        // 第二页 的按钮长按效果      zepto ==> touch.js
+        $(".welcome .rotate-btn-box").longTap(function () {
+            //  console.log("长按效果触发了!");
+            $(".bear-box").css("animation","bearDisappear 1s forwards");
+
+            setTimeout(function(){
+                $(".welcome").fadeOut(1000,function(){
+                    $(".page1").addClass("animate");
+                });
+            },1000)
+        })
     });
 </script>
 </html>
