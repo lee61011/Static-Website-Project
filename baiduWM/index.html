@@ -215,6 +215,11 @@
             </div>
         </div>
     </div>
+
+    <!--音频播放按钮-->
+    <audio loop src="./music/bg.mp3"></audio>
+    <input type="button" class="audioControl">
+
 </body>
 <script type="text/javascript" src="lib/swiper/js/swiper.min.js"></script>
 <!--导入 zepto -->
@@ -243,7 +248,7 @@
         $(this).fadeOut();
     });*/
 
-    // 1.页面打开  稍等一会  开启定时器]
+    // 1.页面打开  稍等一会  开启定时器
     $(function(){
         // 第一页js 效果
         setTimeout(function(){
@@ -273,5 +278,18 @@
             },1000)
         })
     });
+
+    // 为按钮绑定点击事件  控制音频播放
+    var audioDom = document.querySelector("audio");
+    $(".audioControl").click(function(){
+        if(audioDom.paused == true){
+            audioDom.play();
+            $(this).css("background-image","url(./images/music/pause.png)")
+        }else{
+            audioDom.pause();
+            $(this).css("background-image","url(./images/music/play.png)")
+        }
+    });
+
 </script>
 </html>

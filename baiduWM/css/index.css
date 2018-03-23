@@ -395,6 +395,10 @@ template {
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
 }
+input {
+  border: none;
+  outline: none;
+}
 ul,
 ol {
   list-style: none;
@@ -1661,7 +1665,7 @@ body {
   }
   100% {
     transform: rotateZ(-90deg);
-    opacity: 1;
+    opacity: 0;
   }
 }
 @keyframes rotateInNotOut {
@@ -1750,40 +1754,40 @@ body {
   transform-origin: right bottom;
 }
 .page1.animate .scroll-page1 .bg {
-  animation: rotateInOut 1.5s forwards;
+  animation: rotateInOut 2s forwards;
 }
 .page1.animate .scroll-page1 .person {
-  animation: rotateInOut 1.5s .2s forwards;
+  animation: rotateInOut 2s .2s forwards;
 }
 .page1.animate .scroll-page1 .person .paper1 {
-  animation: left2Right2left 1s infinite;
+  animation: left2Right2left 2s infinite;
 }
 .page1.animate .scroll-page1 .person .paper2 {
-  animation: left2Right2left .5s infinite;
+  animation: left2Right2left 2s .2s infinite;
 }
 .page1.animate .scroll-page1 .message-container {
-  animation: rotateInOut 1.5s .5s forwards;
+  animation: rotateInOut 1s .5s forwards;
 }
 .page1.animate .scroll-page2 .bg {
-  animation: rotateInOut 1.5s 1.7s forwards;
+  animation: rotateInOut 2s 2.2s forwards;
 }
 .page1.animate .scroll-page2 .person {
-  animation: rotateInOut 1.5s 1.9s forwards;
+  animation: rotateInOut 2s 2.4s forwards;
 }
 .page1.animate .scroll-page2 .person .eye {
   animation: zhayan .3s infinite;
 }
 .page1.animate .scroll-page2 .message-container {
-  animation: rotateInOut 1.5s 2.2s forwards;
+  animation: rotateInOut 1s 2.7s forwards;
 }
 .page1.animate .scroll-page3 .bg {
-  animation: rotateInNotOut .5s 3.4s forwards;
+  animation: rotateInNotOut 1s 4.4s forwards;
 }
 .page1.animate .scroll-page3 .person {
-  animation: rotateInNotOut .5s 3.6s forwards;
+  animation: rotateInNotOut 1s 4.6s forwards;
 }
 .page1.animate .scroll-page3 .message-container {
-  animation: rotateInNotOut 1.5s 3.9s forwards;
+  animation: rotateInNotOut 1s 4.9s forwards;
 }
 .page1.animate .scroll-page3 .word1 {
   animation: runUpDownLeftRight 1s infinite;
@@ -1796,4 +1800,333 @@ body {
 }
 .page1.animate .scroll-page3 .word4 {
   animation: runUpDownLeftRight 1.2s infinite;
+}
+/*第二页*/
+@keyframes move {
+  1% {
+    opacity: 1;
+  }
+  49% {
+    opacity: 1;
+    transform: translateX(-180%);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(-180%) rotateY(-180deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) rotateY(-180deg);
+  }
+}
+@keyframes run {
+  to {
+    opacity: 0;
+  }
+}
+@keyframes runAllOver2 {
+  25% {
+    transform: translateX(20%) translateY(0);
+  }
+  50% {
+    transform: translateX(0) translateY(-20%);
+  }
+  75% {
+    transform: translateX(-20%) translateY(0);
+  }
+  100% {
+    transform: translateX(0) translateY(20%);
+  }
+}
+.page2 .bg {
+  opacity: 0;
+  transform-origin: 50% 200%;
+}
+.page2 .bear {
+  opacity: 0;
+}
+.page2 .leg {
+  opacity: 1;
+}
+.page2.animate .bg {
+  animation: rotateInNotOut 2s forwards;
+}
+.page2.animate .bear {
+  animation: move 4s 1s infinite;
+}
+.page2.animate .bear .face1 {
+  animation: runAllOver2 .6s infinite;
+}
+.page2.animate .bear .face2 {
+  animation: runAllOver2 1.3s infinite;
+}
+.page2.animate .bear .leg {
+  animation: run .4s infinite;
+}
+/*第三页*/
+@keyframes showHands {
+  from {
+    transform: scale(0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes showWords {
+  25% {
+    opacity: 1;
+    transform: translateX(20%) translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(0) translateY(-20%);
+  }
+  75% {
+    opacity: 1;
+    transform: translateX(-20%) translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) translateY(20%);
+  }
+}
+.page3 .bg {
+  opacity: 0;
+  transform-origin: 50% 200%;
+}
+.page3 .person {
+  opacity: 0;
+  transform-origin: 50% 200%;
+}
+.page3 .person .hand {
+  opacity: 0;
+  transform-origin: 100% 100%;
+}
+.page3 .person .word1 {
+  opacity: 0;
+}
+.page3 .person .word2 {
+  opacity: 0;
+}
+.page3.animate .bg {
+  animation: rotateInNotOut 2s forwards;
+}
+.page3.animate .person {
+  animation: rotateInNotOut 2s 1.2s forwards;
+}
+.page3.animate .person .word1 {
+  animation: showWords .6s 4.4s infinite;
+}
+.page3.animate .person .word2 {
+  animation: showWords 1.3s 4.4s infinite;
+}
+.page3.animate .person .hand {
+  animation: showHands 1.2s 3.2s forwards;
+}
+/*第四页*/
+.page4 .bg {
+  opacity: 0;
+  transform-origin: 50% 200%;
+}
+.page4 .bear {
+  opacity: 0;
+}
+.page4 .care1 {
+  opacity: 0;
+}
+.page4 .care2 {
+  opacity: 0;
+}
+.page4 .care3 {
+  opacity: 0;
+}
+.page4.animate .bg {
+  animation: rotateInNotOut 2s forwards;
+}
+.page4.animate .bear {
+  animation: bearDown .5s 2s forwards;
+}
+.page4.animate .care1 {
+  animation: small2big .5s 2.5s forwards;
+}
+.page4.animate .care2 {
+  animation: small2big .5s 2.5s forwards;
+}
+.page4.animate .care3 {
+  animation: small2big .5s 2.5s forwards;
+}
+/*第五页*/
+@keyframes snowLeft {
+  to {
+    opacity: 0;
+    transform: translateY(1200%) translateX(-200%);
+  }
+}
+@keyframes snowRight {
+  to {
+    opacity: 0;
+    transform: translateY(1200%) translateX(200%);
+  }
+}
+.page5 .bg {
+  opacity: 0;
+  transform-origin: 50% 200%;
+}
+.page5 .bear {
+  opacity: 0;
+}
+.page5 .bear .smoke {
+  opacity: 0;
+}
+.page5 .cloud {
+  opacity: 0;
+}
+.page5.animate .bg {
+  animation: rotateInNotOut 2s forwards;
+}
+.page5.animate .bear {
+  animation: bearDown .5s 2s forwards, upandDown .5s 2.5s infinite;
+}
+.page5.animate .bear .smoke {
+  animation: small2big .5s infinite;
+}
+.page5.animate .cloud {
+  animation: small2big .5s 3s forwards,runUpDownLeftRight 1s 3.5s infinite;
+}
+.page5.animate .cloud .snow:nth-child(1) {
+  animation: snowLeft .5s 3s infinite;
+}
+.page5.animate .cloud .snow:nth-child(2) {
+  animation: snowRight 1.5s 3s infinite;
+}
+.page5.animate .cloud .snow:nth-child(3) {
+  animation: snowLeft 1s 3s infinite;
+}
+.page5.animate .cloud .snow:nth-child(4) {
+  animation: snowRight 2s 3s infinite;
+}
+.page5.animate .cloud .snow:nth-child(5) {
+  animation: snowLeft .6s 3s infinite;
+}
+.page5.animate .cloud .snow:nth-child(6) {
+  animation: snowRight .8s 3s infinite;
+}
+/*第六页*/
+@keyframes none2Normal {
+  from {
+    transform: none;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes big2Small {
+  to {
+    transform: scale(0, 0);
+    opacity: 0;
+  }
+}
+.page6 .bg {
+  opacity: 0;
+  transform-origin: 50% 200%;
+}
+.page6 .gift-box > div {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  opacity: 0;
+}
+.page6.animate .bg {
+  animation: rotateInNotOut 2s forwards;
+}
+.page6.animate .gift-box > div:nth-child(1) {
+  animation: none2Normal 2s 0.1s infinite;
+}
+.page6.animate .gift-box > div:nth-child(1) div {
+  animation: rotate 2s 0.1s infinite;
+}
+.page6.animate .gift-box > div:nth-child(2) {
+  animation: none2Normal 2s 0.2s infinite;
+}
+.page6.animate .gift-box > div:nth-child(2) div {
+  animation: rotate 2s 0.2s infinite;
+}
+.page6.animate .gift-box > div:nth-child(3) {
+  animation: none2Normal 2s 0.3s infinite;
+}
+.page6.animate .gift-box > div:nth-child(3) div {
+  animation: rotate 2s 0.3s infinite;
+}
+.page6.animate .gift-box > div:nth-child(4) {
+  animation: none2Normal 2s 0.4s infinite;
+}
+.page6.animate .gift-box > div:nth-child(4) div {
+  animation: rotate 2s 0.4s infinite;
+}
+.page6.animate .gift-box > div:nth-child(5) {
+  animation: none2Normal 2s 0.5s infinite;
+}
+.page6.animate .gift-box > div:nth-child(5) div {
+  animation: rotate 2s 0.5s infinite;
+}
+.page6.animate .gift-box > div:nth-child(6) {
+  animation: none2Normal 2s 0.6s infinite;
+}
+.page6.animate .gift-box > div:nth-child(6) div {
+  animation: rotate 2s 0.6s infinite;
+}
+.page6.animate .gift-box > div:nth-child(7) {
+  animation: none2Normal 2s 0.7s infinite;
+}
+.page6.animate .gift-box > div:nth-child(7) div {
+  animation: rotate 2s 0.7s infinite;
+}
+.page6.animate .gift-box > div:nth-child(8) {
+  animation: none2Normal 2s 0.8s infinite;
+}
+.page6.animate .gift-box > div:nth-child(8) div {
+  animation: rotate 2s 0.8s infinite;
+}
+.page6.animate .gift-box > div:nth-child(9) {
+  animation: none2Normal 2s 0.9s infinite;
+}
+.page6.animate .gift-box > div:nth-child(9) div {
+  animation: rotate 2s 0.9s infinite;
+}
+.page6.animate .gift-box > div:nth-child(10) {
+  animation: none2Normal 2s 1s infinite;
+}
+.page6.animate .gift-box > div:nth-child(10) div {
+  animation: rotate 2s 1s infinite;
+}
+.page6.animate .gift-box > div:nth-child(11) {
+  animation: none2Normal 2s 1.1s infinite;
+}
+.page6.animate .gift-box > div:nth-child(11) div {
+  animation: rotate 2s 1.1s infinite;
+}
+.page6.animate .gift-box > div:nth-child(12) {
+  animation: none2Normal 2s 1.2s infinite;
+}
+.page6.animate .gift-box > div:nth-child(12) div {
+  animation: rotate 2s 1.2s infinite;
+}
+/*第七页*/
+.page7 .streetlight {
+  opacity: 0;
+  transform-origin: 50% 200%;
+}
+.page7.animate .streetlight {
+  animation: rotateInNotOut 2s forwards;
+}
+/*播放按钮样式*/
+.audioControl {
+  width: 1.125rem;
+  height: 1.125rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: url("../images/music/play.png") no-repeat center / 100% 100%;
+  z-index: 2;
 }
