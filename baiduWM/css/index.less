@@ -876,11 +876,6 @@ body {
     .size(337,459);
     bottom: 9.375rem;
     .light{
-      /*background: url(../imgs/page7/light.png) no-repeat center/100% 100%;
-      position: absolute;
-      bottom: 0;
-      width: 10.53125rem;
-      height: 11.53125rem;*/
       .bgi("../images/page7/light.png");
       .size(337,369);
       bottom: 0;
@@ -1517,6 +1512,26 @@ body {
   }
   .cloud{
     opacity: 0;
+    .snow{
+      .bgi("../images/page5/snow.png");
+      .size(32,32);
+      bottom: 0;
+    }
+    .snow:nth-child(2){
+      .px2rem(left,32*2);
+    }
+    .snow:nth-child(3){
+      .px2rem(left,32*4);
+    }
+    .snow:nth-child(4){
+      .px2rem(left,32*6);
+    }
+    .snow:nth-child(5){
+      .px2rem(left,32*8);
+    }
+    .snow:nth-child(6){
+      .px2rem(left,32*10);
+    }
   }
 }
 .page5.animate {
@@ -1567,6 +1582,9 @@ body {
     opacity: 0;
     transform-origin: 50% 200%;
   }
+  .bear{
+    opacity: 0;
+  }
   .gift-box > div {
     position: absolute;
     top: 0;
@@ -1576,6 +1594,9 @@ body {
 .page6.animate{
   .bg{
     animation: rotateInNotOut 2s forwards;
+  }
+  .bear {
+    animation: small2big .5s 1s forwards;
   }
   .gift-box > div:nth-child(1) {
     animation: none2Normal 2s 0.1s infinite;
